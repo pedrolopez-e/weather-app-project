@@ -28,5 +28,12 @@ async function getWeather(location) {
     console.log(processData(data));
 }
 
-getWeather("Buenos Aires");
+const submit = document.querySelector("#submit-button");
+const input = document.querySelector("#location-input");
+
+submit.addEventListener("click", (event) => {
+    event.preventDefault();
+    let location = input.value;
+    getWeather(location);
+})
 
