@@ -13,9 +13,9 @@ body {
 }
 
 main {
-    border: solid 1px black;
-    height: 5rem;
-    width: 5rem;
-    background-color: rgba(255, 255, 255, 0.01); 
+    border-radius: 10px;
+    height: 80vh;
+    width: 75vw;
+    background-color: rgba(0, 0, 0, 0.3); 
     backdrop-filter: blur(10px);
 }
