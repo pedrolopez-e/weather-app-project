@@ -2,4 +2,20 @@ body {
     background-image: url(/images/electric-storm.jpg);
     background-size: cover;
     background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    border: solid 1px black;
+    height: 5rem;
+    width: 5rem;
+    background-color: rgba(255, 255, 255, 0.01); 
+    backdrop-filter: blur(10px);
 }
