@@ -25,15 +25,34 @@ function processData(data) {
 
 async function getWeather(location) {
     let data = await fetchLocationData(location);
+    let weatherObject = processData(data);
     console.log(processData(data));
+    return weatherObject;
+
 }
 
 const submit = document.querySelector("#submit-button");
 const input = document.querySelector("#location-input");
 
-submit.addEventListener("click", (event) => {
+const temp = document.querySelector("h2");
+const description = document.querySelector("#description");
+const humidity = document.querySelector("#humidity");
+const feelsLike = document.querySelector("#feels-like");
+
+
+
+submit.addEventListener("click", async (event) => {
     event.preventDefault();
     let location = input.value;
-    getWeather(location);
+    let weatherObject = await getWeather(location);
+    console.log(weatherObject.weather);
+    console.log(weatherObject.description);
+    console.log(weatherObject.temp);
+    console.log(weatherObject.feelsLike);
+    console.log(weatherObject.humidity);
+    temp.innerHTML = weatherObject.temp + "°F";
+    description.innerHTML = (weatherObject.description).replace(/^\w/, c => c.toUpperCase());
+    humidity.innerHTML = " " + weatherObject.humidity + "%";
+    feelsLike.innerHTML = " " + weatherObject.feelsLike + "°F";
 })
 
