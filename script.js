@@ -33,6 +33,7 @@ async function getWeather(location) {
 
 const submit = document.querySelector("#submit-button");
 const input = document.querySelector("#location-input");
+const body = document.querySelector("body");
 
 const temp = document.querySelector("h2");
 const description = document.querySelector("#description");
@@ -40,6 +41,38 @@ const humidity = document.querySelector("#humidity");
 const feelsLike = document.querySelector("#feels-like");
 
 
+function containsString(str, substring) {
+    str = str.toLowerCase();
+    return str.includes(substring);
+}
+
+function changeBackground(weather){
+    if (weather === "clear") {
+        body.style.backgroundImage = "url('/images/clear.jpeg')";
+    } else if (weather === "rainy"){
+        body.style.backgroundImage = "url('/images/rain.jpg')";
+    } else if (weather === "cloudy"){
+        body.style.backgroundImage = "url('/images/clouds.jpeg')";
+    } else if (weather === "snowy"){
+        body.style.backgroundImage = "url('/images/snow.jpeg')";
+    } else {
+        body.style.backgroundImage = "url('/images/electric-storm.jpg')";
+    }
+}
+
+function updateBackground(description){
+    if (containsString(description, "clear")){
+        changeBackground("clear");
+    } else if (containsString(description, "rain")){
+        changeBackground("rainy");
+    } else if (containsString(description, "cloud")){
+        changeBackground("cloudy");
+    } else if (containsString(description, "snow")){
+        changeBackground("snowy");
+    } else {
+        changeBackground("stormy");
+    }
+}
 
 submit.addEventListener("click", async (event) => {
     event.preventDefault();
@@ -54,5 +87,6 @@ submit.addEventListener("click", async (event) => {
     description.innerHTML = (weatherObject.description).replace(/^\w/, c => c.toUpperCase());
     humidity.innerHTML = " " + weatherObject.humidity + "%";
     feelsLike.innerHTML = " " + weatherObject.feelsLike + "°F";
+    updateBackground(weatherObject.description);
 })
 
