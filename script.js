@@ -48,7 +48,7 @@ function containsString(str, substring) {
 
 function changeBackground(weather){
     if (weather === "clear") {
-        body.style.backgroundImage = "url('weahter-app-project/images/clear.jpeg')";
+        body.style.backgroundImage = "url('weather-app-project/images/clear.jpeg')";
     } else if (weather === "rainy"){
         body.style.backgroundImage = "url('weather-app-project/images/rain.jpg')";
     } else if (weather === "cloudy"){
