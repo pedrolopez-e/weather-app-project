@@ -48,15 +48,15 @@ function containsString(str, substring) {
 
 function changeBackground(weather){
     if (weather === "clear") {
-        body.style.backgroundImage = "url('/weather-app-project/images/clear.jpeg')";
+        body.style.backgroundImage = "url('https://pedrolopez-e.github.io/weather-app-project/images/clear.jpeg')";
     } else if (weather === "rainy"){
-        body.style.backgroundImage = "url('/weather-app-project/images/rain.jpg')";
+        body.style.backgroundImage = "url('https://pedrolopez-e.github.io/weather-app-project/images/rain.jpg')";
     } else if (weather === "cloudy"){
-        body.style.backgroundImage = "url('/weather-app-project/images/clouds.jpeg')";
+        body.style.backgroundImage = "url('https://pedrolopez-e.github.io/weather-app-project/images/clouds.jpeg')";
     } else if (weather === "snowy"){
-        body.style.backgroundImage = "url('/weather-app-project/images/snow.jpeg')";
+        body.style.backgroundImage = "url('https://pedrolopez-e.github.io/weather-app-project/images/snow.jpeg')";
     } else {
-        body.style.backgroundImage = "url('/weather-app-project/images/electric-storm.jpg')";
+        body.style.backgroundImage = "url('https://pedrolopez-e.github.io/weather-app-project/images/electric-storm.jpg')";
     }
 }
 
