@@ -48,15 +48,15 @@ function containsString(str, substring) {
 
 function changeBackground(weather){
     if (weather === "clear") {
-        body.style.backgroundImage = "url('images/clear.jpeg')";
+        body.style.backgroundImage = "url('/images/clear.jpeg')";
     } else if (weather === "rainy"){
-        body.style.backgroundImage = "url('images/rain.jpg')";
+        body.style.backgroundImage = "url('/images/rain.jpg')";
     } else if (weather === "cloudy"){
-        body.style.backgroundImage = "url('images/clouds.jpeg')";
+        body.style.backgroundImage = "url('/images/clouds.jpeg')";
     } else if (weather === "snowy"){
-        body.style.backgroundImage = "url('images/snow.jpeg')";
+        body.style.backgroundImage = "url('/images/snow.jpeg')";
     } else {
-        body.style.backgroundImage = "url('images/electric-storm.jpg')";
+        body.style.backgroundImage = "url('/images/electric-storm.jpg')";
     }
 }
 
